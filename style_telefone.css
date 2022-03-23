@@ -1,0 +1,48 @@
+body{
+    background-color: #f0f0f0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.cor_botao_telefone{
+    background-color: #ebebeb;
+    border-radius: 8px;
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 14px;
+   
+}
+
+.cor_botao_telefone:hover {
+    background-color: red; 
+    color: white
+}
+
+.cor_botao_telefone:active {
+    background-color:red;
+    box-shadow: 0 2px black;
+    transform: translateY(2px);
+  }
+
+
+  .cor_input{
+    background-color: #ebebeb;
+    border-radius: 8px;
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 14px;
+   
+}
+
+.cor_input:hover {
+    background-color: green; 
+    color: white
+}
+
+.cor_input:active {
+    background-color:green;
+    box-shadow: 0 2px black;
+    transform: translateY(2px);
+  }

@@ -1,0 +1,48 @@
+body{
+    background-color: #f0f0f0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.cor_botao_usuario{
+    background-color: #ebebeb !important;
+    border-radius: 8px;
+    border: 2px solid rgb(0, 0, 0) !important;
+    font-size: 14px;
+   
+}
+
+.cor_botao_usuario:hover {
+    background-color: violet !important; 
+    color: white !important;
+}
+
+.cor_botao_usuario:active {
+    background-color:violet !important;
+    box-shadow: 0 2px black !important;
+    transform: translateY(2px);
+  }
+
+
+.cor_input{
+    background-color: #ebebeb !important;
+    border-radius: 8px;
+    border: 2px solid rgb(0, 0, 0) !important;
+    font-size: 14px;
+   
+}
+
+.cor_input:hover {
+    background-color: green !important; 
+    color: white !important;
+}
+
+.cor_input:active {
+    background-color:green !important;
+    box-shadow: 0 2px black !important;
+    transform: translateY(2px);
+}

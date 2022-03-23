@@ -1,0 +1,28 @@
+body{
+    background-color: #f0f0f0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.cor_botao_update{
+    background-color: #ebebeb !important;
+    border-radius: 8px;
+    border: 2px solid rgb(0, 0, 0) !important;
+    font-size: 14px;
+   
+}
+
+.cor_botao_update:hover {
+    background-color: rgb(177, 177, 177) !important;
+    color: white !important;
+}
+
+.cor_botao_update:active {
+    background-color:rgb(177, 177, 177) !important;
+    box-shadow: 0 2px black !important;
+    transform: translateY(2px);
+  }

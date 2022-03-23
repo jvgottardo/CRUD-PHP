@@ -75,7 +75,7 @@ if(empty(trim($_POST["nome"]))){
         if($stmt = $pdo->prepare($sql)){
             // Vincule as variáveis à instrução preparada como parâmetros
             $stmt->bindParam(":nome", $param_username, PDO::PARAM_STR);
-            $stmt->bindParam(":email", $param_email, PDO::PARAM_STR);
+            $stmt->bindParam(":email", $param_email, PDO::PARAM_STR); 
             $stmt->bindParam(":telefone", $param_telefone, PDO::PARAM_STR);
             $stmt->bindParam(":senha", $param_password, PDO::PARAM_STR);
             
@@ -115,59 +115,74 @@ if(isset($_GET['delete'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
     <title>CRUD</title>
 </head>
-<body>
+<body id="pag">
     
 
     <div> 
         <h1> CRUD</h1>
     </div>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <div class="test">
+    <div>
+<label> Insira um nome de usuario: </label>
+</div>
     <div> 
-    <label> Insira um nome de usuario: </label>
-            <input type="text" name="nome" class="nome" placeholder="Nome de usuarios:"<?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> value=<?php echo $username; ?>> 
-                    <span class="text-muted"><?php echo $username_err; ?></span>
+        <input type="text" name="nome" class="nome" placeholder="Nome de usuarios:"<?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?> value=<?php echo $username; ?>> 
+        <span class="text-muted"><?php echo $username_err; ?></span>
     </div>
+    </div>
+   
 
     <br>
-
-    <div> 
+    <div class="test">
+    <div >
     <label> Insira seu email: </label>
-            <input type="email" name="email" class="email" placeholder="Email:"<?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?> value=<?php echo $email; ?>> 
-                    <span class="text-muted"><?php echo $email_err; ?></span>
     </div>
+    <div> 
+    
+        <input type="email" name="email" class="email" placeholder="Email:"<?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?> value=<?php echo $email; ?>> 
+         <span class="text-muted"><?php echo $email_err; ?></span>
+    </div>
+</div>
 
     <br>
 
-    <div> 
+    <div class="test">
+    <div>
     <label> Insira seu telefone com o seu DD: </label>
+    </div>
+    <div> 
             <input type="tel" name="telefone" class="telefone" placeholder="Telefone:"<?php echo (!empty($telefone_err)) ? 'is-invalid' : ''; ?>value=<?php echo $password; ?>>
             <span class="text-muted"><?php echo $telefone_err; ?></span>
     </div>
+    </div>
 
     <br>
 
-    <div> 
+    <div class="test">
+    <div>
     <label> Insira sua senha: </label>
+    </div>
+    <div> 
+   
             <input type="password" name="senha" class="senha" id ="senha" placeholder="Senha:" <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>value=<?php echo $password; ?>>
             <span class="text-muted"><?php echo $password_err; ?></span>
             <br>
             <p><input type="checkbox" onclick="myFunction()" > Mostrar Senha </p>
     </div>
-    
+    </div>
     <div>
-    <input type="submit" value="Enviar"> 
+    <input type="submit" class="submit" value="Enviar"> 
     </div>
     </form>
 
-
-
 <hr> 
 
-
 </body>
-</html>
+
 
 <script>
 
@@ -190,10 +205,16 @@ function myFunction() {
  $fetchClientes = $sql->fetchAll();
 
  foreach($fetchClientes as $key => $value){
-     echo '<a href="?delete='.$value['id'].'"> (X) </a>';
+
+    
      echo ' <table>' .  ' <tr> <strong>Nome:</strong>' . '<td>'. '<u>'  .$value['nome'].'</u>' . '</td>' . '</tr>'.'</table> ' ;
      echo ' <table>' .  ' <tr> <strong>Email:</strong>' . '<td>'. '<u>' .$value['email']. '</u>'.'</td>' . '</tr>'.'</table> ' ;
      echo ' <table>' .  ' <tr> <strong>Telefone: </strong>' . '<td>'. $value['telefone'].'</td>' . '</tr>'.'</table> ' ;
+
+     echo '<a href="?delete='.$value['id'].'"> <button  id="button"> Delete </button></a>';
+     echo '<a href="update.php?id='.$value['id'].'"> <button id="button"> Update </button> </a>';
      echo '<hr>';
+
  }
 ?>
+</html>

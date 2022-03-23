@@ -1,0 +1,58 @@
+#pag{
+    background-color: #f0f0f0;
+}
+
+a{
+    text-decoration: none;  
+}
+
+#button{
+    background-color: violet ;
+    border-radius: 8px;
+    border: 2px solid rgb(0, 0, 0) ;
+    font-size: 14px;
+   
+}
+
+#button:hover {
+    background-color: blue ; 
+    color: white ;
+}
+
+
+#button:active {
+    background-color: red ;
+    box-shadow: 0 1px black ;
+    transform: translateY(2px);
+  }
+
+label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+table{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.test{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.submit{
+    background-color: #ebebeb;
+    border-radius: 8px;
+    border: 2px solid gray;
+    font-size: 15px;
+    
+}
+.submit:active {
+    background-color: gray;
+    box-shadow: 0 1px black;
+    transform: translateY(2px);
+  }
+
+.submit:hover {
+    background-color: gray; 
+    color: white
+}
